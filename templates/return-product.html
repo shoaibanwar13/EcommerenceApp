@@ -1,0 +1,147 @@
+{% extends 'base.html' %}
+{% block title %}Return Product{% endblock title %}
+{% block content %}
+<!-- ======= Hero Section ======= -->
+<section id="hero">
+    <div class="hero-container">
+      <h3>Welcome to <strong>SSL Shop</strong></h3>
+      <h1>Return Product Page</h1>
+      <a href="#contact" class="btn-get-started scrollto">Get Started</a>
+    </div>
+  </section><!-- End Hero -->
+  {% endblock content %}
+
+  {% block returnproduct %}
+
+<div class="container mt-2">
+    {% for message in messages %}
+
+    <div class="alert alert-{{message.tags}} alert-dismissible fade show" role="alert">
+      <strong>{{message}}</strong>
+      <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+    {% endfor %}
+<div class="row" id="contact">
+
+    <div class="col-md-4"></div>
+    <div class="col-md-4">
+
+        <form action="/returnproduct/" method="post">
+          {% csrf_token %}
+          <br />
+      
+          <label for="name">Full Name</label>
+          <div class="form-group">
+            <input
+              type="text"
+              class="form-control p-2"
+              id="name"
+              name="name"
+              required
+            />
+          </div>
+          <label for="email">Email</label>
+          <div class="form-group">
+            <input
+              type="email"
+              class="form-control p-2"
+              id="email"
+              name="email"
+              value="{{user.email}}"
+              required
+            />
+          </div>
+          <label for="pass1">Product Name</label>
+          <div class="form-group">
+            <textarea
+              type="text"
+              class="form-control p-2"
+              id="desc"
+              name="pname"
+              required> </textarea>
+          </div>
+          <label for="pass1">Product Id</label>
+          <div class="form-group">
+            <textarea
+              type="text"
+              class="form-control p-2"
+              id="desc"
+              name="pid"
+              required> </textarea>
+          </div>
+          <label for="pass1">Reason of Return</label>
+          <div class="form-group">
+            <textarea
+              type="text"
+              class="form-control p-2"
+              id="desc"
+              name="reason"
+              required> </textarea>
+          </div>
+          <label for="pass1">Address</label>
+          <div class="form-group">
+            <textarea
+              type="text"
+              class="form-control p-2"
+              id="desc"
+              name="address"
+              required> </textarea>
+          </div>
+          <label for="pass1">Zip Code</label>
+          <div class="form-group">
+            <textarea
+              type="text"
+              class="form-control p-2"
+              id="desc"
+              name="zip"
+              required> </textarea>
+          </div>
+          <label for="pass1">City</label>
+          <div class="form-group">
+            <textarea
+              type="text"
+              class="form-control p-2"
+              id="desc"
+              name="city"
+              required> </textarea>
+          </div>
+          
+          <label for="pass1">State</label>
+          <div class="form-group">
+            <textarea
+              type="text"
+              class="form-control p-2"
+              id="desc"
+              name="state"
+              required> </textarea>
+          </div>
+          <label for="pnumber">Phone Number</label>
+          <div class="form-group">
+            <input
+              type="number"
+              class="form-control p-2"
+              id="pnumber"
+              name="pnumber"
+              required
+            />
+          </div>
+          <br />
+          <button type="submit" class="btn btn-dark">Submit</button>
+      
+         
+          <br />
+          <br />
+          <br />
+        </form>
+
+
+
+    </div>
+    <div class="col-md-4"></div>
+</div>
+
+
+
+
+</div>
+{% endblock returnproduct %}
